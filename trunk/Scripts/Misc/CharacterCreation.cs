@@ -27,7 +27,7 @@ namespace Server.Misc
 				m.AddItem( pack );
 			}
 
-			PackItem( new RedBook( "a book", m.Name, 20, true ) );
+			PackItem( new RedBook( "Los 100 mejores temas de Arjona", m.Name, 20, true ) );
 			PackItem( new Gold( 1000 ) ); // Starting gold can be customized here
 			PackItem( new Dagger() );
 			PackItem( new Candle() );
@@ -742,6 +742,12 @@ namespace Server.Misc
 
 		private static CityInfo GetStartLocation( CharacterCreatedEventArgs args, bool isYoung )
 		{
+		
+		//Default para evitar bardo
+		
+		return m_NewHavenInfo;
+		
+		/*
 			if( Core.ML )
 			{
 				//if( args.State != null && args.State.NewHaven )
@@ -768,13 +774,13 @@ namespace Server.Misc
 						useHaven = true; 
 
 						new BadStartMessage( m, 1062205 );
-						/*
-						 * Unfortunately you are playing on a *NON-Age-Of-Shadows* game 
-						 * installation and cannot be transported to Malas.  
-						 * You will not be able to take your new player quest in Malas 
-						 * without an AOS client.  You are now being taken to the city of 
-						 * Haven on the Trammel facet.
-						 * */
+
+						// Unfortunately you are playing on a *NON-Age-Of-Shadows* game 
+						// installation and cannot be transported to Malas.  
+						// You will not be able to take your new player quest in Malas 
+						// without an AOS client.  You are now being taken to the city of 
+						// Haven on the Trammel facet.
+
 					}
 
 					break;
@@ -794,13 +800,13 @@ namespace Server.Misc
 						useHaven = true;
 
 						new BadStartMessage( m, 1063487 );
-						/*
-						 * Unfortunately you are playing on a *NON-Samurai-Empire* game 
-						 * installation and cannot be transported to Tokuno. 
-						 * You will not be able to take your new player quest in Tokuno 
-						 * without an SE client. You are now being taken to the city of 
-						 * Haven on the Trammel facet.
-						 * */
+
+						// Unfortunately you are playing on a *NON-Samurai-Empire* game 
+						// installation and cannot be transported to Tokuno. 
+						// You will not be able to take your new player quest in Tokuno 
+						// without an SE client. You are now being taken to the city of 
+						// Haven on the Trammel facet.
+
 					}
 
 					break;
@@ -816,13 +822,13 @@ namespace Server.Misc
 						useHaven = true;
 
 						new BadStartMessage( m, 1063487 );
-						/*
-						 * Unfortunately you are playing on a *NON-Samurai-Empire* game 
-						 * installation and cannot be transported to Tokuno. 
-						 * You will not be able to take your new player quest in Tokuno 
-						 * without an SE client. You are now being taken to the city of 
-						 * Haven on the Trammel facet.
-						 * */
+
+						// Unfortunately you are playing on a *NON-Samurai-Empire* game 
+						// installation and cannot be transported to Tokuno. 
+						// You will not be able to take your new player quest in Tokuno 
+						// without an SE client. You are now being taken to the city of 
+						// Haven on the Trammel facet.
+
 					}
 
 					break;
@@ -833,6 +839,7 @@ namespace Server.Misc
 				return m_NewHavenInfo;
 			else
 				return args.City;
+		*/
 		}
 
 		private static void FixStats( ref int str, ref int dex, ref int intel, int max )
